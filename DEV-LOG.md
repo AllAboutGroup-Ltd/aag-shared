@@ -56,3 +56,7 @@ Fix: check `.gitignore`; force-add with `git add -f <file>` if ignored.
 ## Log entries
 
 <!-- Append below: date · project · symptom · fix -->
+
+2026-10-06 · TSL · `aag-shared` clone fails as `AllAboutGroup-Ltd/aag-shared` ("could not resolve to a Repository") · The repo actually lives at `jackdenton86/aag-shared` (personal account, public), not under the org. Clone from there.
+
+2026-10-06 · TSL · Needed a prod credential (Google service-account JSON / CRON_SECRET) locally to test, but `vercel env pull` wrote the literal `[SENSITIVE]` instead of the value · Vars marked "Sensitive" in Vercel are write-only: never returned by a pull or shown in the dashboard. Get the same value from a non-Sensitive scope (local `.env.staging` / Preview), or exercise the credential via the deployed endpoint rather than locally.
